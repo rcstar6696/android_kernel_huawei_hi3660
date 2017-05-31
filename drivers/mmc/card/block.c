@@ -87,12 +87,12 @@
 
 MODULE_ALIAS("mmc:block");
 /*not referenced,modified for pclint*/
-/*
+
 #ifdef MODULE_PARAM_PREFIX
 #undef MODULE_PARAM_PREFIX
 #endif
 #define MODULE_PARAM_PREFIX "mmcblk."
-*/
+
 #define INAND_CMD38_ARG_EXT_CSD  113
 #define INAND_CMD38_ARG_ERASE    0x00
 #define INAND_CMD38_ARG_TRIM     0x01

@@ -1,0 +1,1 @@
+obj-$(CONFIG_USB_ANALOG_HS_ISL54405)	:= usb_analog_hs_isl54405.o

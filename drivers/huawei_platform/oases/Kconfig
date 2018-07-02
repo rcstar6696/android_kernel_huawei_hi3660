@@ -1,0 +1,30 @@
+#
+# OASES device configuration
+#
+
+config OASES
+	tristate "OASES device"
+	default y
+	depends on ARM || ARM64
+	help
+	  Enable oases patch device
+
+config OASES_SIGNATURE_SUPPORT
+	tristate "OASES device signature support"
+	default y
+	depends on OASES && KEYS
+	select CRYPTO
+	select CRYPTO_SHA1
+	select ASYMMETRIC_KEY_TYPE
+	select ASYMMETRIC_PUBLIC_KEY_SUBTYPE
+	select X509_CERTIFICATE_PARSER
+	select PKCS7_MESSAGE_PARSER
+	help
+	  Enable oases patch device
+
+config OASES_STATIC_PLTS
+	tristate "OASES static PLTs"
+	default y
+	depends on OASES
+	help
+	  Enable static PLT allocation

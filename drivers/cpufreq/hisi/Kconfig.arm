@@ -1,0 +1,60 @@
+config ARCH_HISI_MAXFREQ
+	bool "Hisilicon platform cpu max freq recognition"
+	depends on PM_OPP
+	default n
+	help
+	  Hisilicon platform cpu max freq recognition.
+
+config HISI_ENABLE_GET_VAL
+	bool "Hisilicon get cpufreq param"
+	default n
+	help
+	  Hisilicon get cpufreq param.
+
+config HISI_ENABLE_HPM_DATA_COLLECT
+	bool "Hisilicon get hpm volt param"
+	depends on HISI_ENABLE_GET_VAL
+	default n
+	help
+	  Hisilicon get avs hpm volt param.
+
+config HISI_BIG_MAXFREQ_HOTPLUG
+	tristate "Specific flow for Hisilicon Platform CPUfreq driver"
+	depends on CPUFREQ_DT && HOTPLUG_CPU
+	help
+	  This add Hotplug Flow in CPUfreq for Hisilicon Big-little Platform with boost freq.
+
+config HISI_CPUFREQ_DT
+	bool "Hisilicon cpufreq-dt enable"
+	depends on CPUFREQ_DT
+	default n
+	help
+	  Hisilicon cpufreq-dt enable.
+
+config HISI_HW_VOTE_CPU_FREQ
+	bool "Hisilicon cpufreq-hw_vote enable"
+	depends on HISI_CPUFREQ_DT
+	default n
+	help
+	  Hisilicon cpufreq-hw_vote enable.
+
+config HISI_L2_DYNAMIC_RETENTION
+	bool "Hisilicon l2 dynamic retention by freq"
+	depends on HISI_HW_VOTE_CPU_FREQ
+	default n
+	help
+	  Hisilicon l2 dynamic retention.
+
+config HISI_CPUDDR_FREQ_LINK
+	bool "Hisilicon cpu ddr freq link enable"
+	depends on CPUFREQ_DT
+	default n
+	help
+	  Hisilicon cpu ddr freq link enable.
+
+config CPU_FREQ_POWER_STAT
+	bool "Estimation of task power consumption"
+	depends on CPU_FREQ_STAT
+	default n
+	help
+	  Keep track of amount of power each task consumes and report power per uid

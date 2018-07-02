@@ -1,0 +1,9 @@
+menu "Huawei Device Usage Big-data Analytics Initiative Support"
+
+config HUAWEI_DUBAI
+	tristate "Huawei Device Usage Big-data Analytics Initiative Support"
+	default n
+	---help---
+	  This driver provides DUBAI feature
+
+endmenu

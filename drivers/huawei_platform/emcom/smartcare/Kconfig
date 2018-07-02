@@ -1,0 +1,4 @@
+config HW_NETWORK_MEASUREMENT
+	bool "Huawei Network Measurement System"
+	depends on HUAWEI_EMCOM
+	default n

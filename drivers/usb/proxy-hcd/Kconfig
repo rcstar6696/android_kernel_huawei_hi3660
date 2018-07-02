@@ -1,0 +1,11 @@
+config USB_PROXY_HCD
+	tristate "Hisilicon Proxy Host Controller Driver"
+	depends on USB
+	help
+	  Say Y here if your system has a USB Host Controller that can be
+	  accessed via proxy.
+config USB_PROXY_HCD_DEBUG
+	bool "Hisilicon Proxy Host Controller Driver Debug"
+	depends on USB_PROXY_HCD
+	help
+	  enable proxy HCD debug or not.

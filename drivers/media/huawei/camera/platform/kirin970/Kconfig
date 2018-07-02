@@ -1,0 +1,101 @@
+comment "Huawei Sensor kirin970"
+
+source "drivers/media/huawei/camera/sensor/vcm/Kconfig"
+source "drivers/media/huawei/camera/sensor/flash/Kconfig"
+source "drivers/media/huawei/camera/sensor/ois/Kconfig"
+
+config HUAWEI_CAMERA_USE_IMX230
+	bool "imx230"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX298
+	bool "imx298"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX298HYBIRD
+	bool "imx298hybird"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX179
+	bool "imx179"
+    default y
+	depends on HUAWEI_CAMERA
+
+
+config HUAWEI_CAMERA_USE_IMX286DUAL
+	bool "imx286dual"
+    default y
+	depends on HUAWEI_CAMERA
+
+
+config HUAWEI_CAMERA_USE_OV8865
+	bool "ov8865"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX286HYBIRD
+	bool "imx286hybird"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX386HYBIRD
+	bool "imx386hybird"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX219
+	bool "imx219"
+    default n
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_HI843
+	bool "hi843"
+    default n
+
+config HUAWEI_CAMERA_USE_OV2281
+	bool "ov2281"
+    default y
+	depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX486HYBIRD
+    bool "imx486hybird"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX319
+    bool "imx319"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX318
+    bool "imx318"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_OV13855
+    bool "ov13855"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_HI1333
+    bool "hi1333"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX258
+    bool "imx258"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_OV16B10HYBIRD
+    bool "ov16b10hybird"
+    default n
+    depends on HUAWEI_CAMERA
+
+config HUAWEI_CAMERA_USE_IMX498HYBIRD
+    bool "imx498hybird"
+    default n
+    depends on HUAWEI_CAMERA

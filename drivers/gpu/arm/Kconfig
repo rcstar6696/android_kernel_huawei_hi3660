@@ -1,0 +1,40 @@
+#
+# (C) COPYRIGHT 2012 ARM Limited. All rights reserved.
+#
+# This program is free software and is provided to you under the terms of the
+# GNU General Public License version 2 as published by the Free Software
+# Foundation, and any use by you of this program is subject to the terms
+# of such GNU licence.
+#
+# A copy of the licence is included with the program, and can also be obtained
+# from Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA  02110-1301, USA.
+#
+#
+
+config MALI_PLATFORM_HI6250
+        tristate "6250 Mali configs"
+        default n
+
+config MALI_PLATFORM_HI3660
+        tristate "3660 Mali configs"
+        default n
+
+config MALI_PLATFORM_KIRIN970
+        tristate "970 Mali configs"
+        default n
+
+menu "ARM GPU Configuration"
+
+if MALI_PLATFORM_HI6250
+endif
+
+if MALI_PLATFORM_HI3660
+source "drivers/gpu/arm/bifrost-r8p0-00cet0/Kconfig"
+endif
+
+if MALI_PLATFORM_KIRIN970
+source "drivers/gpu/arm/bifrost-r8p0-00cet0/Kconfig"
+endif
+
+endmenu

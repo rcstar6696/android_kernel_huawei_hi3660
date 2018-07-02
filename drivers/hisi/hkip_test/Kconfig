@@ -1,0 +1,7 @@
+config HISI_HHEE_DEBUG
+	bool "HISI HHEE test support"
+	depends on HISI_HHEE
+	depends on !UBSAN && !KCOV && !KASAN
+	default n
+	help
+	  Say yes here to support the HISI HHEE debug

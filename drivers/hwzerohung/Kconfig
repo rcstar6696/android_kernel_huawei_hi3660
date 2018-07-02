@@ -1,0 +1,6 @@
+config HW_ZEROHUNG
+	depends on HW_LOGGER
+	bool "Huawei zero hung driver"
+	default n
+	---help---
+	  This feature support to catch hung log

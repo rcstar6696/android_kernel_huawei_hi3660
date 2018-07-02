@@ -1,0 +1,38 @@
+#
+# Generic huawei hisi misc drivers configuration
+#
+menuconfig CONNECTIVITY_HI110X
+	bool "Hisilicon Wireless Connectivity Support"
+	---help---
+	  If you want to use Hisilicon  Wireless Connectivity, you should set this,
+	  and choose one product
+
+if CONNECTIVITY_HI110X
+config HI110X_DRIVER_PATH
+	string "The Kernel Driver Path"
+	default "drivers/connectivity/hisi"
+config CONNECTIVITY_HI110X_HI6250
+	bool "Connectivity diff between 6250 with 3650"
+	default n
+config CONNECTIVITY_HI110X_HI3650
+	bool "Connectivity diff between 3650 with 6250"
+	default n
+config CONNECTIVITY_HI110X_HI3660
+	bool "Connectivity diff between 3660 with 6250"
+	default n
+config CONNECTIVITY_HI110X_KIRIN660
+	bool "Connectivity diff between 660 with 3650"
+	default n
+config CONNECTIVITY_HI110X_KIRIN970
+	bool "Connectivity diff between 970 with 6250"
+	default n
+config CONNECTIVITY_HI110X_KIRIN980
+	bool "Connectivity diff between 980 with 6250"
+	default n
+
+source "drivers/connectivity/hisi/Kconfig"
+source "drivers/connectivity/hisi/platform/Kconfig"
+source "drivers/connectivity/hisi/wifi/Kconfig"
+endif
+
+

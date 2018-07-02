@@ -1,0 +1,106 @@
+/{
+	firmware {
+		android {
+			compatible = "android,firmware";
+			vbmeta_huawei {
+				compatible = "android,vbmeta";
+				parts = "vbmeta,kernel,system,vendor,odm,ramdisk,cust,version,product";
+			};
+			vbmeta_hisi {
+				compatible = "android,vbmeta";
+				parts = "vbmeta,kernel,system,vendor,odm,ramdisk";
+			};
+			fstab {
+				compatible = "android,fstab";
+				system {
+					compatible = "android,system";
+					dev = "/by-name/system_a";
+					type = "ext4";
+					mnt_flags = "ro,barrier=1";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+				vendor {
+					compatible = "android,vendor";
+					dev = "/by-name/vendor_a";
+					type = "ext4";
+					mnt_flags = "ro,barrier=1";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+				odm {
+					compatible = "android,odm";
+					dev = "/by-name/odm_a";
+					type = "ext4";
+					mnt_flags = "ro,barrier=1";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+				ramdisk {
+					compatible = "android,ramdisk";
+					dev = "/by-name/ramdisk_a";
+					type = "ext4";
+					mnt_flags = "ro,barrier=1";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+				dfx {
+					compatible = "android,dfx";
+					dev = "/by-name/dfx";
+					type = "emmc";
+					mnt_flags = "defaults";
+					fsmgr_flags = "defaults";
+					status = "ok";
+				};
+				rrecord {
+					compatible = "android,rrecord";
+					dev = "/by-name/rrecord";
+					type = "emmc";
+					mnt_flags = "defaults";
+					fsmgr_flags = "defaults";
+					status = "ok";
+				};
+				misc {
+					compatible = "android,misc";
+					dev = "/by-name/misc";
+					type = "emmc";
+					mnt_flags = "defaults";
+					fsmgr_flags = "defaults";
+					status = "ok";
+				};
+				bfi {
+					compatible = "android,bfi";
+					dev = "/by-name/bootfail_info";
+					type = "emmc";
+					mnt_flags = "defaults";
+					fsmgr_flags = "defaults";
+					status = "ok";
+				};
+				cust {
+					compatible = "android,cust";
+					dev = "/by-name/cust_a";
+					type = "ext4";
+					mnt_flags = "ro";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+				version {
+					compatible = "android,version";
+					dev = "/by-name/version_a";
+					type = "ext4";
+					mnt_flags = "ro";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+				product {
+					compatible = "android,product";
+					dev = "/by-name/product_a";
+					type = "ext4";
+					mnt_flags = "ro";
+					fsmgr_flags = "wait,avb";
+					status = "ok";
+				};
+			};
+		};
+	};
+};

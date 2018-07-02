@@ -1,0 +1,29 @@
+#
+# huawei device state monitor configuration
+#
+
+config HUAWEI_BFM
+	bool "huawei BFM"
+	default n
+	help
+	  If you say yes here you get support for huawei boot fail monitor solution.
+
+config HW_BFMR_HISI
+	bool "bfmr for hisi"
+	default n
+	help
+	  If you say yes here you get support for huawei bfmr solution on hisi.
+
+config HW_BFMR_QCOM
+	bool "bfmr for qcom"
+	default n
+	help
+	  If you say yes here you get support for huawei bfmr solution on qcom.
+
+config USE_BOOTFAIL_RECOVERY_SOLUTION
+    bool "use bootfail recovery solution"
+    default n
+    help
+      If you say yes here you get support for huawei bfmr solution
+      
+source "drivers/hwbfm/hwbfr/Kconfig"

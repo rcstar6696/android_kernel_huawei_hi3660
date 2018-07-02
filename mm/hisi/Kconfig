@@ -1,0 +1,14 @@
+menuconfig HISI_MM
+	bool "Hisilicon MM support"
+	---help---
+	  This option add some hisilicon mm codes, needed by following modules.
+
+if HISI_MM
+
+config HISI_SLOW_PATH_COUNT
+	bool "page alloc enter slow path count"
+	default n
+	help
+	  Say 'Y' here is you want to count page alloc slow path.
+
+endif

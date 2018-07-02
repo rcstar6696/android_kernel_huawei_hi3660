@@ -1,0 +1,21 @@
+#
+# huawei hostprocessing ts driver configuration
+#
+
+menuconfig JDI_HOST_TS_KIT
+	tristate "JDI_HOST ts drivers"
+	default n
+	help
+	  If you say yes here you get support for jdi hostprocessing ts touchscreen.
+
+menuconfig HUAWEI_THP
+	tristate "HUAWEI thp core drivers"
+	default n
+	help
+	  If you say yes here you get support for core capacity hostprocessing touchscreen.
+
+menuconfig HUAWEI_THP_NOVATECH
+	tristate "Novatech thp drivers"
+	default n
+	help
+	  If you say yes here you get support for novatech hostprocessing touchscreen.

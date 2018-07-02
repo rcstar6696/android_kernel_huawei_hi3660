@@ -1,0 +1,80 @@
+* Devicetree binding for Goodix Touchdriver
+
+Required properties:
+- compatible: value should be "goodix".
+- slave_address: i2c address, value should be 0x14.
+- pinctrl-names: pinctrl configuration.
+- pinctrl-x: pinctrl configuration.
+- goodix-vdd-supply: analog regulator.
+- goodix-io-supply: io regulator.
+- reset_gpio: reset gpio.
+- irq-gpio: interrupt gpio. 
+- irq_config: irq trigger mode:0 - low level, 1 - high level, 2 - raising edge,
+			 3 - falling edge. falling edge is recommended.
+- alog_id: input alogrithm id.
+- product_id: product ID, this property is used in tp test module to identify different ic.
+- panel_max_x: max resolution of x direction.
+- panel_max_y: max resolution of y direction.
+- raw_data_limit: raw data limits.
+- normal_config: normal config data
+- tptest_config: like normal_config, but it's for touch panel testing.
+
+Optional properties:
+roi_data_size: rows and columes of roi data, this property must be set correctly
+		 if ROI feature enabled. you can find the correct value these property in
+		 the config data.
+- glove_config: like normal_config, but it's for glove feature.
+- holster_config: like normal_config, but it's for holster feature.
+- goodix-vdd-voltage:
+
+Example:
+touchscreen {
+	compatible = "huawei,touchscreen";
+	bus_type = "i2c";
+	bus_id = <1>;
+	product = "mogolia";
+	support_chip_name = "synaptics", "cypress", "goodix";
+	goodix: touchscreen@14 {
+		compatible = "goodix";
+		slave_address = <0x14>;
+		pinctrl-names = "default", "idle";
+		pinctrl-0 = <&gpio161_cfg_func &gpio200_cfg_func>;
+		pinctrl-1 = <&gpio161_cfg_idle &gpio200_cfg_idle>;
+		goodix-vdd-supply = <&ldo17>;
+		goodix-io-supply = <&lsw50>;
+		vdd_voltage = <2800000>; /* 2.8v */
+		reset_gpio = <&gpio20 1 0>;
+		irq_gpio = <&gpio25 0 0>;
+		irq_config = <3>; /* recommended */
+		algo_id = <1>;
+		product_id = "GT1151";
+		x_max_mt = <1024>;
+		y_max_mt = <1920>;
+		roi_data_size = <7 7>; /* row and colume*/
+		tools_support; /* support GTP tools APK */
+		SENSORID0 {
+			compatible = "goodix-sensorid-0";
+			producer = "sumsung";
+			y_max_mt = <1920>;
+			x_max_mt = <1080>;
+			raw_data_limit = <2300 1000  300>;     /*rawdata-max*/ 
+			shortciurt_threshold = <10 800 800 800 500 500 31>;
+			normal_config = [45 00 fe f4 a5 a6 ...];
+			glove_config = [45 00 fe f4 a5 a6 ...];
+			holster_config = [45 00 fe f4 a5 a6 ...];
+			tptest_config = [45 00 fe f4 a5 a6 ...];
+		};
+		SENSORID2 {
+			compatible = "goodix-sensorid-2";
+			producer = "sumsung";
+			y_max_mt = <1920>;
+			x_max_mt = <1080>;
+			raw_data_limit = <2300 1000  300>;     /*rawdata-max*/ 
+			shortciurt_threshold = <10 800 800 800 500 500 31>;
+			normal_config = [45 00 fe f4 a5 a6 ...];
+			glove_config = [45 00 fe f4 a5 a6 ...];
+			holster_config = [45 00 fe f4 a5 a6 ...];
+			tptest_config = [45 00 fe f4 a5 a6 ...];
+		};
+	};
+};

@@ -1,0 +1,21 @@
+/*
+ * Hisilicon Ltd. hi3xxxASIC SoC
+ *
+ * Copyright (C) 2013 Hisilicon Technologies CO., Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * publishhed by the Free Software Foundation.
+ */
+/{
+	trusted_core {
+		compatible = "trusted_core";
+		interrupts = <0 344 4>;
+		sec-s-buring-supply = <&sec_s>;
+		sec-s-regulator-enable;
+		sec-s-power-ctrl-en;
+		tui-enable;
+		memory-region = <&tui_cma>;
+		reg = <0x0 0x0 0x0 0x0>;
+	};
+};

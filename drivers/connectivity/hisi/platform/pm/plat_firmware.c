@@ -2419,7 +2419,7 @@ int32 firmware_cfg_init(void)
     if (firmware_in_boot)
     {
         PS_PRINT_INFO("Hi110x firmware is buildin\n");
-        g_auc_cfg_path = g_auc_cfg_in_boot_path;
+         g_auc_cfg_path = g_auc_cfg_in_system_path;
     }
     else
     {
